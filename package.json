@@ -1,6 +1,6 @@
 {
   "name": "yahoo-options",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "isomorphic library to retrieve option chains from Yahoo Finance",
   "main": "lib/index.js",
   "scripts": {

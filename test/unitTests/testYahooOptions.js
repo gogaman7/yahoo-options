@@ -14,7 +14,7 @@ describe('suite of tests surrounding YahooOptions', function() {
         var fileContents = fs.readFileSync(__dirname + '/samples/aapl.html').toString();
 
         yahooOptions._parseForExpirations(fileContents, function(err, arrayOfMomentJSDates) {
-            assert(!err, 'maing sure no errors occured');
+            assert(!err, 'making sure no errors occured');
 
             var expectedUnitTimes = JSON.parse('["1430438400","1431043200","1431648000","1432252800","1432857600","1433462400","1434672000","1437091200","1440115200","1444953600","1452816000","1484870400"]');
 
@@ -25,5 +25,21 @@ describe('suite of tests surrounding YahooOptions', function() {
                 done(err);
             })
         });
-    })
+    });
+
+    it('should return okay an optionChain', function(done) {
+
+        var fileContents = fs.readFileSync(__dirname + '/samples/aapl-143164800-20150515-optionChain.html').toString();
+
+        yahooOptions._parseOptionChain(fileContents, function(err, optionChain) {
+
+            var expectedOptionChain = JSON.parse(fs.readFileSync(__dirname + '/samples/aapl-20150515-optionChain.json').toString());
+
+            assert(!err, 'making sure no errors occured');
+            assert.deepEqual(optionChain, expectedOptionChain, 'making sure we exactly expected option chain');
+
+            done();
+
+        });
+    });
 });

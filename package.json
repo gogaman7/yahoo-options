@@ -1,6 +1,6 @@
 {
   "name": "yahoo-options",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "isomorphic library to retrieve option chains from Yahoo Finance",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "option_chain"
   ],
   "author": "Igor Belayev <gogaspam1@gmail.com>",
-  "license": "ISC",
+  "license": "LGPL",
   "dependencies": {
     "async": "^0.9.0",
     "moment": "^2.10.2",
